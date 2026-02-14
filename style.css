@@ -270,3 +270,14 @@ video {
   margin: 0 auto 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
+/* Corrige que las secciones tapen el botón de música */
+.music-toggle {
+  z-index: 9999; /* asegura que quede por encima de todo */
+}
+
+/* Opcional: evita que el contenido se acerque demasiado */
+body {
+  position: relative;
+  z-index: 0;
+}
