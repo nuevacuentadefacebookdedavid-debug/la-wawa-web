@@ -1,0 +1,272 @@
+/* style.css - LA WAWA WEB
+   Minimalista: blanco + rosa
+   Guarda en la misma carpeta que index.html
+*/
+
+:root{
+  --bg: #ffffff;              /* fondo principal */
+  --page: #fbf9fb;            /* color suave de página */
+  --card: #ffffff;            /* tarjetas/sections */
+  --accent: #ff7ba9;          /* rosa principal */
+  --accent-2: #ffd6e8;        /* rosa claro */
+  --muted: #7a6f6f;           /* texto secundario */
+  --shadow: rgba(20,20,20,0.06);
+  --radius: 16px;
+  --max-width: 940px;
+  --gap: 1rem;
+}
+
+* { box-sizing: border-box; }
+
+html,body{
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(180deg, var(--page), var(--bg));
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.45;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header{
+  width: 100%;
+  padding: 2.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+}
+
+header h1{
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+header p{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 300;
+  font-size: 0.95rem;
+}
+
+/* Main container */
+main{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+}
+
+/* Cada sección (tarjeta) */
+section.recuerdo{
+  width: 100%;
+  max-width: var(--max-width);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: 0 10px 30px var(--shadow);
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+  overflow: hidden;
+}
+
+section.recuerdo:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(20,20,20,0.09);
+}
+
+section.recuerdo h2{
+  margin: 0 0 .9rem 0;
+  font-size: 1.25rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Video responsive */
+video{
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 1rem;
+  outline: none;
+  background: #000;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Galería: 2 imágenes al lado */
+.galeria{
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.galeria img{
+  width: calc(50% - 0.4rem);
+  height: auto;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  transition: transform .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+
+.galeria img:hover{
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.08);
+}
+
+/* Textos (3 por sección) */
+.textos{
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.textos p{
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--muted);
+  font-weight: 300;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,123,169,0.06), rgba(255,214,233,0.04));
+  width: min(760px, 92%);
+}
+
+/* Footer */
+footer{
+  width: 100%;
+  padding: 1.2rem 1rem 3rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color: #b7b0b0;
+  font-size: .92rem;
+}
+
+/* Floating music toggle (opcional) */
+/* Si quieres un botón custom para pausar/reanudar música,
+   pon un botón <button class="music-toggle" aria-label="Pausar música">♪</button>
+   y controla el audio con JS. */
+.music-toggle{
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  background: linear-gradient(180deg, var(--accent), #ff5c92);
+  color: white;
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  box-shadow: 0 12px 30px rgba(255,123,169,0.18);
+  cursor: pointer;
+  font-size: 1.15rem;
+  transition: transform .18s ease, box-shadow .18s;
+}
+
+/* pequeño efecto al presionar */
+.music-toggle:active{ transform: scale(.98); }
+
+/* Estilo del elemento audio nativo (por si lo dejas visible) */
+audio{
+  width: min(420px, 92%);
+  margin: 0.6rem auto 0;
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,0.04));
+  border-radius: 12px;
+}
+
+/* Accesibilidad y focus */
+button:focus, a:focus, video:focus, img:focus{
+  outline: 3px solid rgba(255,123,169,0.16);
+  outline-offset: 4px;
+}
+
+/* Layout responsivo */
+@media (max-width: 820px){
+  :root{ --max-width: 720px; }
+  header h1{ font-size: 1.6rem; }
+  .galeria{ gap: 0.6rem; }
+  .galeria img{ width: 100%; max-height: 240px; border-radius: 10px; }
+  .galeria{ flex-direction: column; }
+  section.recuerdo{ padding: 1.1rem; border-radius: 12px; }
+  .textos p{ font-size: .96rem; padding: .55rem .8rem; }
+  audio{ width: 95%; }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 420px){
+  header{ padding: 1.4rem .8rem; }
+  header p{ font-size: .87rem; }
+  header h1{ font-size: 1.35rem; }
+  .music-toggle{ right: .7rem; bottom: .8rem; width:48px; height:48px; }
+}
+
+/* --- BOTÓN DE MÚSICA --- */
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ff7ba9, #ff4e8e);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 75, 130, 0.3);
+  transition: all 0.25s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(255, 75, 130, 0.4);
+}
+
+/* --- Tamaño uniforme para imágenes y videos --- */
+
+/* 📸 Imágenes */
+.galeria img {
+  width: 100%;
+  max-width: 400px;   /* puedes ajustar este valor */
+  height: 250px;      /* altura fija para uniformidad */
+  object-fit: cover;  /* recorta sin deformar */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* 🎬 Videos */
+video {
+  width: 100%;
+  max-width: 400px;   /* mismo ancho que las imágenes */
+  height: 250px;      /* misma altura */
+  object-fit: cover;  /* recorta para llenar el cuadro */
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}

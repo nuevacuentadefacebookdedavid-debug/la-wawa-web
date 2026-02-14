@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA WAWA WEB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <audio id="musica" autoplay loop>
+  <source src="wawospng/Los Panchos Piel Canela Type beat “Enamorados” pista al estilo de los Panchos.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+
+<!-- Botón de play/pause -->
+<button id="btn-musica" class="music-toggle">⏸️</button>
+
+
+  <header>
+    <h1>💖 LA WAWA WEB 💖</h1>
+    <p>Nuestros recuerdos más lindos</p>
+  </header>
+
+  <main>
+    <!-- SECCIÓN 1 -->
+    <section class="recuerdo">
+      <h2>Nuestro comienzo</h2>
+      <video controls src="wawospng/vidparque.mp4"></video>
+      <div class="texto"> <p>🌸 Cada momento contigo vale la pena.</p></div>
+      <div class="galeria">
+        <img src="wawospng/imgcasa.jpg" alt="Foto 1">
+        </div>
+        <div class="textos">
+             <p>✨ El día que todo comenzó...</p>
+        </div>
+        <div class="galeria">
+            <img src="wawospng/imgescuela.jpg" alt="Foto 2">
+        </div>
+      <div class="textos">
+        <p>❤️ Nunca imaginé que serías tan importante para mí.</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2 -->
+    <section class="recuerdo">
+      <h2>Nuestro comienzo</h2>
+      <video controls src="wawospng/vidrio.mp4"></video>
+      <div class="texto"> <p>🌸 Cada momento contigo vale la pena.</p></div>
+      <div class="galeria">
+        <img src="wawospng/imgceluwawa.jpg" alt="Foto 1">
+        </div>
+        <div class="textos">
+             <p>✨ El día que todo comenzó...</p>
+        </div>
+        <div class="galeria">
+            <img src="wawospng/imgceluwawo.jpg" alt="Foto 2">
+        </div>
+      <div class="textos">
+        <p>❤️ Nunca imaginé que serías tan importante para mí.</p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3 -->
+    <section class="recuerdo">
+      <h2>Nuestro comienzo</h2>
+      <video controls src="wawospng/vidcasa.mp4"></video>
+      <div class="texto"> <p>🌸 Cada momento contigo vale la pena.</p></div>
+      <div class="galeria">
+        <img src="wawospng/imghelados.jpg" alt="Foto 1">
+        </div>
+        <div class="textos">
+             <p>✨ El día que todo comenzó...</p>
+        </div>
+        <div class="galeria">
+            <img src="wawospng/imgroblox.jpg" alt="Foto 2">
+        </div>
+      <div class="textos">
+        <p>❤️ Nunca imaginé que serías tan importante para mí.</p>
+      </div>
+    </section> 
+  </main>
+
+  <footer>
+    <p>Hecho con amor 💌 por nosotros</p>
+  </footer>
+  <script>
+  const audio = document.getElementById("musica");
+  const boton = document.getElementById("btn-musica");
+  let reproduciendo = true;
+
+  boton.addEventListener("click", () => {
+    if (reproduciendo) {
+      audio.pause();
+      boton.textContent = "▶️";
+    } else {
+      audio.play();
+      boton.textContent = "⏸️";
+    }
+    reproduciendo = !reproduciendo;
+  });
+</script>
+
+  
+</body>
+</html>
